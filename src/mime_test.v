@@ -4,13 +4,20 @@ fn test_parse() {
 	assert parse("text/html")! == MimeType{
 		type: "text"
 		subtype: "html"
-		parameters: map[string]string{}
+		parameters: {}
 	}
-	assert parse("audio/webm;codec=av4")! == MimeType{
+	assert parse("audio/webm;codecs=av4")! == MimeType{
 		type: "audio"
 		subtype: "webm"
 		parameters: {
-			"codec": "av4"
+			"codecs": "av4"
+		}
+	}
+	assert parse('video/mp4; codecs="avc1.640020"')! == MimeType{
+		type: "video"
+		subtype: "mp4"
+		parameters: {
+			"codecs": "avc1.640020"
 		}
 	}
 }
