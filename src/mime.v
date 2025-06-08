@@ -78,9 +78,10 @@ pub fn parse(str string) !MimeType {
 
 		mut param_value := ""
 		if str[pos] == `"` {
+			pos++
 			for pos < str.len && str[pos] != `"` {
-				pos++
 				param_value += str[pos].ascii_str()
+				pos++
 				
 			}
 			for pos < str.len && str[pos] != `;` {
