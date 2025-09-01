@@ -1,5 +1,11 @@
-# Mime library
-**WARNING :** This library isn't done yet, some things are not implemented or do not work properly.
+# V MIME library
+
+## Why?
+The standard V MIME library is just a big library of IANA's accepted types. It provides nothing to parse them, which is problematic if an application is using non-standard types, or types with parameters.
+
+## Todo
+- [x] Parsing
+- [ ] Serializing
 
 ## Usage
 ```vlang
